@@ -1,7 +1,8 @@
 import React from 'react';
-import { Phone, MessageCircle, Wrench, Shield, Clock, Users, CheckCircle, Star } from 'lucide-react';
+import { Phone, MessageCircle, Wrench, Shield, Clock, Users, CheckCircle, Star, Menu } from 'lucide-react';
 import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Importar imagens
@@ -9,6 +10,14 @@ import logoRM from './assets/rm_aquecedores_logo.png';
 import instalacaoImg from './assets/instalacao_aquecedor.jpg';
 import manutencaoImg from './assets/manutencao_aquecedor.jpg';
 import consertoImg from './assets/conserto_aquecedor.jpg';
+import heroBackground from './assets/hero_background.jpg';
+
+// Importar páginas
+import ServicesPage from './pages/Services';
+import Atendimento24hPage from './pages/Atendimento24h';
+import ContactPage from './pages/Contact';
+import BlogPage from './pages/Blog';
+import TestimonialsPage from './pages/Testimonials';
 
 function App() {
   const phoneNumber = '2196430-2000';
@@ -20,7 +29,7 @@ function App() {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.');
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`, '_blank');
   };
 
   const services = [
@@ -67,64 +76,37 @@ function App() {
     }
   ];
 
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <img src={logoRM} alt="RM Aquecedores" className="h-12 w-auto" />
-          </div>
-          <div className="flex items-center space-x-4">
-            <Button
-              onClick={handlePhoneCall}
-              className="phone-button text-white font-semibold px-6 py-2 rounded-lg flex items-center space-x-2 hover:scale-105 transition-transform"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">(21) 96430-2000</span>
-            </Button>
-            <Button
-              onClick={handleWhatsApp}
-              className="whatsapp-button text-white font-semibold px-6 py-2 rounded-lg flex items-center space-x-2 hover:scale-105 transition-transform"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span className="hidden sm:inline">WhatsApp</span>
-            </Button>
-          </div>
-        </div>
-      </header>
-
+  const HomePage = () => (
+    <>
       {/* Hero Section */}
-      <section className="hero-gradient text-white py-20 relative overflow-hidden">
+      <section className="hero-gradient text-white py-20 relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${heroBackground})` }}>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Instalação, Manutenção e Conserto de
-            <span className="block text-primary-foreground">Aquecedores a Gás</span>
+            Instalação e Manutenção de Aquecedores
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
-            Atendimento especializado em todo Rio de Janeiro com garantia total.
-            Técnicos qualificados e equipamentos modernos.
+            Atendimento Especializado com garantia total, Técnicos Especializados disponíveis 24 Horas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              onClick={handlePhoneCall}
-              size="lg"
-              className="phone-button text-white font-bold px-8 py-4 text-lg rounded-xl flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
+            <a
+              href={`tel:+55${phoneNumber.replace('-', '')}`}
+              className="phone-button text-white font-bold px-10 py-5 text-lg rounded-md flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
             >
               <Phone className="w-6 h-6" />
               <span>Ligar agora: (21) 96430-2000</span>
-            </Button>
-            <Button
-              onClick={handleWhatsApp}
-              size="lg"
-              className="whatsapp-button text-white font-bold px-8 py-4 text-lg rounded-xl flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
+            </a>
+            <a
+              href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-button text-white font-bold px-10 py-5 text-lg rounded-md flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
             >
               <MessageCircle className="w-6 h-6" />
               <span>Chamar no WhatsApp</span>
-            </Button>
+            </a>
           </div>
         </div>
-        <div className="absolute inset-0 bg-black opacity-20"></div>
       </section>
 
       {/* Services Section */}
@@ -159,12 +141,14 @@ function App() {
                   <CardDescription className="text-gray-600 mb-4">
                     {service.description}
                   </CardDescription>
-                  <Button
-                    onClick={handleWhatsApp}
-                    className="w-full bg-accent hover:bg-accent/90 text-white font-semibold"
+                  <a
+                    href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para ' + service.title.toLowerCase() + '.')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-2 px-4 rounded-md text-center inline-block"
                   >
                     Solicitar Orçamento
-                  </Button>
+                  </a>
                 </CardContent>
               </Card>
             ))}
@@ -202,6 +186,21 @@ function App() {
         </div>
       </section>
 
+      {/* Services Section (from ServicesPage) */}
+      <ServicesPage />
+
+      {/* Atendimento 24h Section (from Atendimento24hPage) */}
+      <Atendimento24hPage />
+
+      {/* Testimonials Section (from TestimonialsPage) */}
+      <TestimonialsPage />
+
+      {/* Blog Section (from BlogPage) */}
+      <BlogPage />
+
+      {/* Contact Section (from ContactPage) */}
+      <ContactPage />
+
       {/* CTA Section */}
       <section className="py-20 bg-secondary text-white">
         <div className="container mx-auto px-4 text-center">
@@ -213,32 +212,89 @@ function App() {
             Entre em contato agora mesmo!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              onClick={handlePhoneCall}
-              size="lg"
-              className="phone-button text-white font-bold px-8 py-4 text-lg rounded-xl flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
+            <a
+              href={`tel:+55${phoneNumber.replace('-', '')}`}
+              className="phone-button text-white font-bold px-10 py-5 text-lg rounded-md flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
             >
               <Phone className="w-6 h-6" />
               <span>Ligar agora: (21) 96430-2000</span>
-            </Button>
-            <Button
-              onClick={handleWhatsApp}
-              size="lg"
-              className="whatsapp-button text-white font-bold px-8 py-4 text-lg rounded-xl flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
+            </a>
+            <a
+              href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-button text-white font-bold px-10 py-5 text-lg rounded-md flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
             >
               <MessageCircle className="w-6 h-6" />
               <span>Chamar no WhatsApp</span>
-            </Button>
+            </a>
           </div>
         </div>
       </section>
+    </>
+  );
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      {/* Header */}
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <Link to="/">
+              <img src={logoRM} alt="RM Aquecedores" className="h-12 w-auto" />
+            </Link>
+          </div>
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-700 hover:text-primary font-semibold transition-colors">Início</Link>
+            <Link to="/servicos" className="text-gray-700 hover:text-primary font-semibold transition-colors">Serviços</Link>
+            <Link to="/atendimento-24h" className="text-gray-700 hover:text-primary font-semibold transition-colors">Atendimento 24h</Link>
+            <Link to="/depoimentos" className="text-gray-700 hover:text-primary font-semibold transition-colors">Depoimentos</Link>
+            <Link to="/blog" className="text-gray-700 hover:text-primary font-semibold transition-colors">Blog</Link>
+            <Link to="/contato" className="text-gray-700 hover:text-primary font-semibold transition-colors">Contato</Link>
+          </nav>
+          <div className="flex items-center space-x-4">
+            <a
+              href={`tel:+55${phoneNumber.replace('-', '')}`}
+              className="phone-button text-white font-semibold px-6 py-2 rounded-lg flex items-center space-x-2 hover:scale-105 transition-transform hidden sm:flex"
+            >
+              <Phone className="w-4 h-4" />
+              <span className="hidden sm:inline">(21) 96430-2000</span>
+            </a>
+            <a
+              href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-button text-white font-semibold px-6 py-2 rounded-lg flex items-center space-x-2 hover:scale-105 transition-transform hidden sm:flex"
+            >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp" className="w-4 h-4" />
+              <span className="hidden sm:inline">WhatsApp</span>
+            </a>
+            <button className="md:hidden text-gray-700">
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/servicos" element={<ServicesPage />} />
+          <Route path="/atendimento-24h" element={<Atendimento24hPage />} />
+          <Route path="/depoimentos" element={<TestimonialsPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/contato" element={<ContactPage />} />
+        </Routes>
+      </main>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <img src={logoRM} alt="RM Aquecedores" className="h-12 w-auto mb-4" />
+              <Link to="/">
+                <img src={logoRM} alt="RM Aquecedores" className="h-12 w-auto mb-4" />
+              </Link>
               <p className="text-gray-400 mb-4">
                 Especialistas em instalação, manutenção e conserto de aquecedores a gás
                 em todo Rio de Janeiro.
@@ -247,10 +303,10 @@ function App() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Serviços</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>Instalação de Aquecedores a Gás</li>
-                <li>Manutenção Preventiva</li>
-                <li>Conserto de Aquecedores</li>
-                <li>Atendimento de Emergência</li>
+                <li><Link to="/servicos" className="hover:text-primary transition-colors">Instalação de Aquecedores a Gás</Link></li>
+                <li><Link to="/servicos" className="hover:text-primary transition-colors">Manutenção Preventiva</Link></li>
+                <li><Link to="/servicos" className="hover:text-primary transition-colors">Conserto de Aquecedores</Link></li>
+                <li><Link to="/atendimento-24h" className="hover:text-primary transition-colors">Atendimento de Emergência</Link></li>
               </ul>
             </div>
             <div>
@@ -269,16 +325,16 @@ function App() {
       </footer>
 
       {/* Floating WhatsApp Button */}
-      <Button
-        onClick={handleWhatsApp}
+      <a
+        href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}
+        target="_blank"
+        rel="noopener noreferrer"
         className="floating-whatsapp whatsapp-button text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform"
-        size="lg"
       >
-        <MessageCircle className="w-8 h-8" />
-      </Button>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp" className="w-8 h-8" />
+      </a>
     </div>
   );
 }
 
 export default App;
-
