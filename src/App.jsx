@@ -85,7 +85,7 @@ function App() {
   const HomePage = () => (
     <>
       {/* Hero Section */}
-      <section className="hero-gradient text-white py-20 relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${heroBackground})` }}>
+      <section className="hero-gradient text-white py-20 relative overflow-hidden bg-cover bg-center md:bg-center bg-[center_20%]" style={{ backgroundImage: `url(${heroBackground})` }}>
         <div className="absolute inset-0 bg-black opacity-70"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
