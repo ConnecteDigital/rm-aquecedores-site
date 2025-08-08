@@ -10,7 +10,7 @@ import logoRM from './assets/rm_aquecedores_logo.png';
 import instalacaoImg from './assets/instalacao_aquecedor.jpg';
 import manutencaoImg from './assets/manutencao_aquecedor.jpg';
 import consertoImg from './assets/conserto_aquecedor.jpg';
-import heroBackground from './assets/hero_background.jpg';
+import heroBackground from '/new_hero_background.png';
 
 // Importar páginas
 import ServicesPage from './pages/Services';
@@ -50,6 +50,12 @@ function App() {
       description: 'Serviço especializado em conserto de aquecedores a gás, incluindo limpeza, regulagem e substituição de peças.',
       image: consertoImg,
       icon: <Shield className="w-8 h-8 text-primary" />
+    },
+    {
+      title: 'Venda de Aquecedores',
+      description: 'Comercialização de aquecedores a gás das melhores marcas do mercado, com garantia e suporte técnico completo.',
+      image: instalacaoImg,
+      icon: <Users className="w-8 h-8 text-primary" />
     }
   ];
 
@@ -80,7 +86,7 @@ function App() {
     <>
       {/* Hero Section */}
       <section className="hero-gradient text-white py-20 relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${heroBackground})` }}>
-        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="absolute inset-0 bg-black opacity-70"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Instalação e Manutenção de Aquecedores
@@ -121,7 +127,7 @@ function App() {
               com qualidade, segurança e garantia total.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="service-card bg-white border-0 shadow-lg overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
@@ -240,9 +246,19 @@ function App() {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Link to="/">
-              <img src={logoRM} alt="RM Aquecedores" className="h-12 w-auto" />
+            <Link to="/" className="flex items-center space-x-3">
+              <img src={logoRM} alt="RM Aquecedores" className="h-12 w-12 rounded-full object-cover" />
+              <span className="text-xl font-bold text-secondary">RM Aquecedores</span>
             </Link>
+            <a
+              href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 hover:bg-green-600 text-white p-2 rounded-full transition-colors"
+              title="Chamar no WhatsApp"
+            >
+              <img src="/whatsapp-icon.png" alt="WhatsApp" className="w-5 h-5" />
+            </a>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-primary font-semibold transition-colors">Início</Link>
@@ -261,12 +277,12 @@ function App() {
               <span className="hidden sm:inline">(21) 96430-2000</span>
             </a>
             <a
-              href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}
+              href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-button text-white font-semibold px-6 py-2 rounded-lg flex items-center space-x-2 hover:scale-105 transition-transform hidden sm:flex"
             >
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp" className="w-4 h-4" />
+              <img src="/whatsapp-icon.png" alt="WhatsApp" className="w-4 h-4" />
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
             <button className="md:hidden text-gray-700">
@@ -326,12 +342,12 @@ function App() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}
+        href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.')}`}
         target="_blank"
         rel="noopener noreferrer"
         className="floating-whatsapp whatsapp-button text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform"
       >
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp" className="w-8 h-8" />
+        <img src="/whatsapp-icon.png" alt="WhatsApp" className="w-8 h-8" />
       </a>
     </div>
   );

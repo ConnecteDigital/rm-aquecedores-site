@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrench, CheckCircle, Shield } from 'lucide-react';
+import { Wrench, CheckCircle, Shield, Users } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 
@@ -12,7 +12,7 @@ function Services() {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.');
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`, '_blank');
   };
 
   const services = [
@@ -35,10 +35,10 @@ function Services() {
       icon: <Shield className="w-8 h-8 text-primary" />
     },
     {
-      title: 'Instalação e Manutenção de Fogões a Gás',
-      description: 'Além de aquecedores, somos especialistas na instalação e manutenção de fogões a gás. Garantimos a conexão segura e o funcionamento adequado do seu fogão, com atenção aos detalhes e às normas de segurança.',
-      image: instalacaoImg, // Usar uma imagem genérica ou buscar uma específica para fogão
-      icon: <Wrench className="w-8 h-8 text-primary" />
+      title: 'Venda de Aquecedores',
+      description: 'Comercializamos aquecedores a gás das melhores marcas do mercado, oferecendo produtos de alta qualidade com garantia e suporte técnico completo. Nossa equipe especializada ajuda você a escolher o modelo ideal para suas necessidades.',
+      image: instalacaoImg,
+      icon: <Users className="w-8 h-8 text-primary" />
     },
     {
       title: 'Instalação e Manutenção de Boilers',
