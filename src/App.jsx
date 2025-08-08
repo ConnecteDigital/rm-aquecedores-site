@@ -10,7 +10,7 @@ import logoRM from './assets/rm_aquecedores_logo.png';
 import instalacaoImg from './assets/instalacao_aquecedor.jpg';
 import manutencaoImg from './assets/manutencao_aquecedor.jpg';
 import consertoImg from './assets/conserto_aquecedor.jpg';
-import heroBackground from '/new_hero_background.png';
+import heroBackground from './assets/hero_background.jpg';
 
 // Importar páginas
 import ServicesPage from './pages/Services';
