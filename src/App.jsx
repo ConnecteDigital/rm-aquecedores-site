@@ -12,8 +12,8 @@ import manutencaoImg from './assets/manutencao_aquecedor.jpg';
 import consertoImg from './assets/conserto_aquecedor.jpg';
 import heroBackground from './assets/hero_background.jpg';
 
-// Importar páginas
 import ServicesPage from './pages/Services';
+
 import Atendimento24hPage from './pages/Atendimento24h';
 import ContactPage from './pages/Contact';
 import BlogPage from './pages/Blog';
@@ -192,8 +192,7 @@ function App() {
         </div>
       </section>
 
-      {/* Services Section (from ServicesPage) */}
-      <ServicesPage />
+
 
       {/* Atendimento 24h Section (from Atendimento24hPage) */}
       <Atendimento24hPage />
@@ -204,8 +203,7 @@ function App() {
       {/* Blog Section (from BlogPage) */}
       <BlogPage />
 
-      {/* Contact Section (from ContactPage) */}
-      <ContactPage />
+
 
       {/* CTA Section */}
       <section className="py-20 bg-secondary text-white">

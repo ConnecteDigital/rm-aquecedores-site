@@ -4,21 +4,29 @@ import { Star } from 'lucide-react';
 function Testimonials() {
   const testimonials = [
     {
-      quote: "Excelente serviço! A equipe da RM Aquecedores foi super profissional e resolveu o problema do meu aquecedor rapidamente. Recomendo a todos!",
-      author: "João Silva",
+      quote: "Solicitei os serviços da empresa com o Vitor ontem a noite, hoje pela manhã ele já enviou o técnico. E já foi resolvido...",
+      author: "Rodrigo Vianna",
       rating: 5
     },
     {
-      quote: "Fiquei muito satisfeito com a instalação do meu aquecedor a gás. Tudo feito com muita atenção e segurança. Parabéns pelo trabalho!",
-      author: "Maria Oliveira",
+      quote: "Gostaria de deixar registrado a competência, profissionalismo e comprometimento do técnico Raphael Monteiro. Um excelente profissional!!",
+      author: "Marcelo Ribeiro",
       rating: 5
     },
     {
-      quote: "Atendimento 24 horas de verdade! Meu aquecedor parou de funcionar de madrugada e eles vieram na mesma hora. Salvaram meu dia!",
-      author: "Carlos Souza",
-      rating: 4
+      quote: "Excelente empresa e profissional muito honesto! Problema do meu aquecedor se tratava apenas de um fio rompido enquanto outras empresas condenavam peças. A RM aquecedores consertaram exatamente o que era! Sem preço excessivo",
+      author: "Renan Pimenta",
+      rating: 5
+    },
+    {
+      quote: "Excelente prestador, encontrei aqui pela internet e veio reparar meu aquecedor no mesmo dia, no prazo de 30 minutos e...",
+      author: "Bruno Fadul",
+      rating: 5
     }
   ];
+
+  const googleMapsLink = "https://share.google/hjBVpmT0JSeQELemu";
+  const reviewLink = "https://g.page/r/CTWJl38xWPYvEBM/review";
 
   return (
     <div className="container mx-auto px-4 py-20">
@@ -42,6 +50,24 @@ function Testimonials() {
             <p className="text-md font-semibold text-secondary">- {testimonial.author}</p>
           </div>
         ))}
+      </div>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+        <a
+          href={reviewLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-md text-lg flex items-center space-x-2 transition-colors"
+        >
+          Deixe sua Avaliação
+        </a>
+        <a
+          href={googleMapsLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gray-700 hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-md text-lg flex items-center space-x-2 transition-colors"
+        >
+          Ver no Google Maps
+        </a>
       </div>
     </div>
   );
