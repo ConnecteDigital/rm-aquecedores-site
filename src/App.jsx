@@ -20,8 +20,8 @@ import BlogPage from './pages/Blog';
 import TestimonialsPage from './pages/Testimonials';
 
 function App() {
-  const phoneNumber = '2196430-2000';
-  const whatsappNumber = '5521964302000';
+  const phoneNumber = '219889-99672';
+  const whatsappNumber = '5521988999672';
 
   const handlePhoneCall = () => {
     window.open(`tel:+55${phoneNumber.replace('-', '')}`);
@@ -221,7 +221,7 @@ function App() {
               className="phone-button text-white font-bold px-10 py-5 text-lg rounded-md flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
             >
               <Phone className="w-6 h-6" />
-              <span>Ligar agora: (21) 96430-2000</span>
+              <span>Ligar agora: (21) 9889-99672</span>
             </a>
             <a
               href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.')}`}
@@ -326,8 +326,8 @@ function App() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contato</h3>
               <div className="space-y-2 text-gray-400">
-                <p>Telefone: (21) 96430-2000</p>
-                <p>WhatsApp: (21) 96430-2000</p>
+                <p>Telefone: (21) 9889-99672</p>
+                <p>WhatsApp: (21) 9889-99672</p>
                 <p>Atendimento: Todo Rio de Janeiro</p>
               </div>
             </div>
