@@ -8,7 +8,7 @@ import manutencaoImg from '../assets/manutencao_aquecedor.jpg';
 import consertoImg from '../assets/conserto_aquecedor.jpg';
 
 function Services() {
-  const whatsappNumber = '5521988999672';
+  const whatsappNumber = '55 21964302000';
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.');
