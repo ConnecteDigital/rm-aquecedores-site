@@ -3,7 +3,7 @@ import { Phone, MessageCircle, Clock } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
 function Atendimento24h() {
-  const phoneNumber = '219889-99672';
+  const phoneNumber = ' 2196430-2000';
   const whatsappNumber = '5521988999672';
 
   const handlePhoneCall = () => {
@@ -31,7 +31,7 @@ function Atendimento24h() {
           className="phone-button text-white font-bold px-10 py-5 text-lg rounded-md flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
         >
           <Phone className="w-6 h-6" />
-          <span>Ligar agora: (21) 9889-99672</span>
+          <span>Ligar agora:  (21) 96430-2000</span>
         </Button>
         <Button
           onClick={handleWhatsApp}
