@@ -3,7 +3,7 @@ import { Phone, MessageCircle, Clock } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
 function Atendimento24h() {
-  const phoneNumber = '21988999672';
+  const phoneNumber = '219889-99672';
   const whatsappNumber = '5521988999672';
 
   const handlePhoneCall = () => {
