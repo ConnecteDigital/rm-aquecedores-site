@@ -20,7 +20,7 @@ import BlogPage from './pages/Blog';
 import TestimonialsPage from './pages/Testimonials';
 
 function App() {
-  const phoneNumber = ' 21 9889-99672';
+  const phoneNumber = ' 21 96430-2000';
   const whatsappNumber = '55 21964302000';
 
   const handlePhoneCall = () => {
@@ -100,7 +100,7 @@ function App() {
               className="phone-button text-white font-bold px-10 py-5 text-lg rounded-md flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
             >
               <Phone className="w-6 h-6" />
-              <span>Ligar agora:  (21) 9889-99672</span>
+              <span>Ligar agora:  (21) 96430-2000</span>
             </a>
             <a
               href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.')}`}
@@ -221,7 +221,7 @@ function App() {
               className="phone-button text-white font-bold px-10 py-5 text-lg rounded-md flex items-center space-x-3 hover:scale-105 transition-transform shadow-lg"
             >
               <Phone className="w-6 h-6" />
-              <span>Ligar agora:  (21) 9889-99672</span>
+              <span>Ligar agora:  (21) 96430-2000</span>
             </a>
             <a
               href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.')}`}
@@ -272,7 +272,7 @@ function App() {
               className="phone-button text-white font-semibold px-6 py-2 rounded-lg flex items-center space-x-2 hover:scale-105 transition-transform hidden sm:flex"
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">(21) 9889-99672</span>
+              <span className="hidden sm:inline">(21) 96430-2000</span>
             </a>
             <a
               href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.')}`}
@@ -326,7 +326,7 @@ function App() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contato</h3>
               <div className="space-y-2 text-gray-400">
-                <p>Telefone: (21) 9889-99672</p>
+                <p>Telefone: (21) 96430-2000</p>
                 <p>WhatsApp:  (21) 96430-2000</p>
                 <p>Atendimento: Todo Rio de Janeiro</p>
               </div>
