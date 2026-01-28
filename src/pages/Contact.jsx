@@ -6,8 +6,8 @@ import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 
 function Contact() {
-  const phoneNumber = ' 21 96430-2000';
-  const whatsappNumber = '5521988999672';
+  const phoneNumber = ' 21 98899-9672';
+  const whatsappNumber = '5521964302000';
 
   const handlePhoneCall = () => {
     window.open(`tel:+55${phoneNumber.replace('-', '')}`);
@@ -35,11 +35,11 @@ function Contact() {
           <div className="space-y-6 text-lg text-gray-700">
             <p className="flex items-center space-x-3">
               <Phone className="w-6 h-6 text-primary" />
-              <span>Telefone: (21) 96430-2000</span>
+              <span>Telefone: 21 98899-9672</span>
             </p>
             <p className="flex items-center space-x-3">
               <MessageCircle className="w-6 h-6 text-primary" />
-              <span>WhatsApp: (21) 9889-99672</span>
+              <span>WhatsApp:  (21) 96430-2000</span>
             </p>
             <p className="flex items-center space-x-3">
               <Mail className="w-6 h-6 text-primary" />
