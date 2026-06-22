@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageCircle, Wrench, Shield, Clock, Users, CheckCircle, Star, Menu } from 'lucide-react';
+import { Phone, MessageCircle, Wrench, Shield, Clock, Users, CheckCircle, Star, Menu, Thermometer, Droplets, Hammer } from 'lucide-react';
 import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 import { Routes, Route, Link } from 'react-router-dom';
@@ -56,6 +56,24 @@ function App() {
       description: 'Comercialização de aquecedores a gás das melhores marcas do mercado, com garantia e suporte técnico completo.',
       image: instalacaoImg,
       icon: <Users className="w-8 h-8 text-primary" />
+    },
+    {
+      title: 'Instalação e Manutenção de Boilers',
+      description: 'Serviços completos para boilers residenciais e comerciais: instalação, manutenção e reparos com máxima eficiência e segurança.',
+      image: consertoImg,
+      icon: <Thermometer className="w-8 h-8 text-primary" />
+    },
+    {
+      title: 'Resina na Tubulação',
+      description: 'Aplicação de resina epóxi nas tubulações para restaurar, vedar e proteger canos antigos sem necessidade de quebra de paredes, com durabilidade e segurança.',
+      image: manutencaoImg,
+      icon: <Droplets className="w-8 h-8 text-primary" />
+    },
+    {
+      title: 'Construção de Tubulação',
+      description: 'Construção e instalação de tubulações de gás para residências, prédios e estabelecimentos comerciais, seguindo todas as normas técnicas de segurança.',
+      image: instalacaoImg,
+      icon: <Hammer className="w-8 h-8 text-primary" />
     }
   ];
 
@@ -127,7 +145,7 @@ function App() {
               com qualidade, segurança e garantia total.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="service-card bg-white border-0 shadow-lg overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
@@ -320,6 +338,9 @@ function App() {
                 <li><Link to="/servicos" className="hover:text-primary transition-colors">Instalação de Aquecedores a Gás</Link></li>
                 <li><Link to="/servicos" className="hover:text-primary transition-colors">Manutenção Preventiva</Link></li>
                 <li><Link to="/servicos" className="hover:text-primary transition-colors">Conserto de Aquecedores</Link></li>
+                <li><Link to="/servicos" className="hover:text-primary transition-colors">Instalação e Manutenção de Boilers</Link></li>
+                <li><Link to="/servicos" className="hover:text-primary transition-colors">Resina na Tubulação</Link></li>
+                <li><Link to="/servicos" className="hover:text-primary transition-colors">Construção de Tubulação</Link></li>
                 <li><Link to="/atendimento-24h" className="hover:text-primary transition-colors">Atendimento de Emergência</Link></li>
               </ul>
             </div>

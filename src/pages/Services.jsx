@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrench, CheckCircle, Shield, Users } from 'lucide-react';
+import { Wrench, CheckCircle, Shield, Users, Thermometer, Droplets, Hammer } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 
@@ -43,8 +43,20 @@ function Services() {
     {
       title: 'Instalação e Manutenção de Boilers',
       description: 'Oferecemos serviços completos para boilers, incluindo instalação, manutenção e reparos. Seja para sistemas residenciais ou comerciais, nossa equipe assegura que seu boiler funcione com máxima eficiência e segurança, proporcionando água quente em abundância.',
-      image: consertoImg, // Usar uma imagem genérica ou buscar uma específica para boiler
-      icon: <Wrench className="w-8 h-8 text-primary" />
+      image: consertoImg,
+      icon: <Thermometer className="w-8 h-8 text-primary" />
+    },
+    {
+      title: 'Resina na Tubulação',
+      description: 'Aplicação de resina epóxi nas tubulações para restaurar, vedar e proteger canos antigos sem necessidade de quebra de paredes. Solução eficiente, econômica e duradoura para eliminar vazamentos e corrosão em instalações residenciais e comerciais.',
+      image: manutencaoImg,
+      icon: <Droplets className="w-8 h-8 text-primary" />
+    },
+    {
+      title: 'Construção de Tubulação',
+      description: 'Construção e instalação de tubulações de gás para residências, condomínios e estabelecimentos comerciais. Executamos projetos completos de rede de gás com total conformidade às normas técnicas da ABNT, garantindo segurança e eficiência no fornecimento.',
+      image: instalacaoImg,
+      icon: <Hammer className="w-8 h-8 text-primary" />
     }
   ];
 
