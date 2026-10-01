@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 
 function Testimonials() {
   const testimonials = [
@@ -29,50 +29,57 @@ function Testimonials() {
   const reviewLink = "https://g.page/r/CTWJl38xWPYvEBM/review";
 
   return (
-    <div className="container mx-auto px-4 py-20">
-      <h1 className="text-4xl md:text-5xl font-bold text-center text-secondary mb-12">
-        O que nossos clientes dizem
-      </h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
-            <div className="flex mb-4">
-              {[...Array(testimonial.rating)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-yellow-500 fill-current" />
-              ))}
-              {[...Array(5 - testimonial.rating)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-gray-300" />
-              ))}
+    <section className="py-24 section-dark glow-bg">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-14 flex flex-col items-center">
+          <span className="eyebrow mb-4">Depoimentos</span>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white">
+            O que nossos <span className="text-flame">clientes</span> dizem
+          </h1>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.author} className="service-card p-7 flex flex-col">
+              <Quote className="w-10 h-10 text-primary mb-4" />
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`w-5 h-5 ${i < testimonial.rating ? 'text-[#f7941d] fill-current' : 'text-neutral-600'}`}
+                  />
+                ))}
+              </div>
+              <p className="text-neutral-300 mb-6 flex-grow">"{testimonial.quote}"</p>
+              <div className="flex items-center gap-3 pt-5 border-t border-white/5">
+                <div className="bg-flame w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-white">
+                  {testimonial.author.charAt(0)}
+                </div>
+                <p className="font-bold text-white">{testimonial.author}</p>
+              </div>
             </div>
-            <p className="text-lg text-gray-700 mb-6 italic">
-              \"{testimonial.quote}\"
-            </p>
-            <p className="text-md font-semibold text-secondary">- {testimonial.author}</p>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+          <a
+            href={reviewLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="phone-button text-white font-bold px-8 py-4 rounded-xl text-lg transition-transform hover:scale-[1.03]"
+          >
+            Deixe sua Avaliação
+          </a>
+          <a
+            href={googleMapsLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline-light font-bold px-8 py-4 rounded-xl text-lg"
+          >
+            Ver no Google Maps
+          </a>
+        </div>
       </div>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
-        <a
-          href={reviewLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-md text-lg flex items-center space-x-2 transition-colors"
-        >
-          Deixe sua Avaliação
-        </a>
-        <a
-          href={googleMapsLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gray-700 hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-md text-lg flex items-center space-x-2 transition-colors"
-        >
-          Ver no Google Maps
-        </a>
-      </div>
-    </div>
+    </section>
   );
 }
 
 export default Testimonials;
-
-

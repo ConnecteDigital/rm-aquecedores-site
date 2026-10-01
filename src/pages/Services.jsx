@@ -1,92 +1,90 @@
 import React from 'react';
 import { Wrench, CheckCircle, Shield, Users } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Button } from '../components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import { whatsappLink } from '../lib/contact';
 
 import instalacaoImg from '../assets/instalacao_aquecedor.jpg';
 import manutencaoImg from '../assets/manutencao_aquecedor.jpg';
 import consertoImg from '../assets/conserto_aquecedor.jpg';
 
 function Services() {
-  const whatsappNumber = '5521964302000';
-
-  const handleWhatsApp = () => {
-    const message = encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços de aquecedor a gás.');
-    window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`, '_blank');
-  };
-
   const services = [
     {
       title: 'Instalação de Aquecedores a Gás',
       description: 'Nossa equipe especializada realiza a instalação de aquecedores a gás de forma segura e eficiente, seguindo todas as normas técnicas e garantindo o perfeito funcionamento do seu equipamento. Trabalhamos com as principais marcas do mercado, oferecendo soluções personalizadas para residências e empresas.',
       image: instalacaoImg,
-      icon: <Wrench className="w-8 h-8 text-primary" />
+      icon: Wrench
     },
     {
       title: 'Manutenção Preventiva',
       description: 'A manutenção preventiva é crucial para prolongar a vida útil do seu aquecedor a gás e garantir sua segurança. Realizamos inspeções completas, limpeza de componentes, verificação de vazamentos e ajustes necessários para otimizar o desempenho e evitar problemas futuros.',
       image: manutencaoImg,
-      icon: <CheckCircle className="w-8 h-8 text-primary" />
+      icon: CheckCircle
     },
     {
       title: 'Conserto de Aquecedores',
       description: 'Seu aquecedor a gás apresentou algum problema? Nossa equipe de técnicos qualificados está pronta para diagnosticar e reparar qualquer tipo de falha, desde pequenos ajustes até a substituição de peças. Atendimento rápido e eficaz para restaurar o conforto da sua água quente.',
       image: consertoImg,
-      icon: <Shield className="w-8 h-8 text-primary" />
+      icon: Shield
     },
     {
       title: 'Venda de Aquecedores',
       description: 'Comercializamos aquecedores a gás das melhores marcas do mercado, oferecendo produtos de alta qualidade com garantia e suporte técnico completo. Nossa equipe especializada ajuda você a escolher o modelo ideal para suas necessidades.',
       image: instalacaoImg,
-      icon: <Users className="w-8 h-8 text-primary" />
+      icon: Users
     },
     {
       title: 'Instalação e Manutenção de Boilers',
       description: 'Oferecemos serviços completos para boilers, incluindo instalação, manutenção e reparos. Seja para sistemas residenciais ou comerciais, nossa equipe assegura que seu boiler funcione com máxima eficiência e segurança, proporcionando água quente em abundância.',
       image: consertoImg, // Usar uma imagem genérica ou buscar uma específica para boiler
-      icon: <Wrench className="w-8 h-8 text-primary" />
+      icon: Wrench
     }
   ];
 
   return (
-    <div className="container mx-auto px-4 py-20">
-      <h1 className="text-4xl md:text-5xl font-bold text-center text-secondary mb-12">
-        Nossos Serviços Completos
-      </h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => (
-          <Card key={index} className="service-card bg-white border-0 shadow-lg overflow-hidden">
-            <div className="relative h-48 overflow-hidden">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-              />
-              <div className="absolute top-4 left-4 bg-white p-3 rounded-full shadow-lg">
-                {service.icon}
+    <section className="py-24 section-dark glow-bg">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-14 flex flex-col items-center">
+          <span className="eyebrow mb-4">Serviços</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white">
+            Nossos Serviços <span className="text-flame">Completos</span>
+          </h1>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <div key={service.title} className="service-card group overflow-hidden flex flex-col">
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
+                  <div className="icon-badge absolute bottom-0 left-6 translate-y-1/2 w-14 h-14">
+                    <Icon className="w-7 h-7" />
+                  </div>
+                </div>
+                <div className="p-6 pt-10 flex flex-col flex-grow">
+                  <h2 className="text-xl font-bold text-white mb-3">{service.title}</h2>
+                  <p className="text-neutral-400 mb-6 flex-grow">{service.description}</p>
+                  <a
+                    href={whatsappLink('Olá! Gostaria de solicitar um orçamento para ' + service.title.toLowerCase() + '.')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="phone-button text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2"
+                  >
+                    Solicitar Orçamento <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
-            </div>
-            <CardHeader>
-              <CardTitle className="text-xl text-secondary">{service.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-gray-600 mb-4">
-                {service.description}
-              </CardDescription>
-              <Button
-                onClick={handleWhatsApp}
-                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold"
-              >
-                Solicitar Orçamento
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export default Services;
-
-
