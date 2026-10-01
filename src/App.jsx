@@ -320,7 +320,7 @@ function App() {
       <header className="bg-[#0a0a0a]/95 backdrop-blur border-b border-white/5 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-3 shrink-0">
-            <img src={logoRM} alt="RM Aquecedores" className="h-14 w-14 object-cover" />
+            <img src={logoRM} alt="RM Aquecedores" className="h-14 w-14 object-contain p-1 bg-black rounded-full ring-2 ring-primary/60" />
             <span className="font-display text-xl font-extrabold leading-none">
               <span className="text-flame">RM</span> <span className="text-white">Aquecedores</span>
             </span>
@@ -409,7 +409,7 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             <div className="lg:col-span-1">
               <Link to="/">
-                <img src={logoRM} alt="RM Aquecedores" className="h-36 w-36 object-cover -ml-4 -mt-4" />
+                <img src={logoRM} alt="RM Aquecedores" className="h-32 w-32 object-contain p-2.5 bg-black rounded-full ring-2 ring-primary/60 mb-5" />
               </Link>
               <p className="text-neutral-400">
                 Especialistas em instalação, manutenção e conserto de aquecedores a gás em todo Rio de Janeiro.
