@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Phone, Wrench, Shield, Clock, Users, CheckCircle, Menu, X, MapPin, Flame, ArrowRight } from 'lucide-react';
+import { Phone, Wrench, Shield, Clock, Users, CheckCircle, Menu, X, MapPin, Flame, ArrowRight, Thermometer, Droplets, Hammer } from 'lucide-react';
 import { Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import './App.css';
 
@@ -52,6 +52,24 @@ const services = [
     description: 'Comercialização de aquecedores a gás das melhores marcas do mercado, com garantia e suporte técnico completo.',
     image: instalacaoImg,
     icon: Users
+  },
+  {
+    title: 'Instalação e Manutenção de Boilers',
+    description: 'Serviços completos para boilers residenciais e comerciais: instalação, manutenção e reparos com máxima eficiência e segurança.',
+    image: consertoImg,
+    icon: Thermometer
+  },
+  {
+    title: 'Resina na Tubulação',
+    description: 'Aplicação de resina epóxi nas tubulações para restaurar, vedar e proteger canos antigos sem necessidade de quebra de paredes, com durabilidade e segurança.',
+    image: manutencaoImg,
+    icon: Droplets
+  },
+  {
+    title: 'Construção de Tubulação',
+    description: 'Construção e instalação de tubulações de gás para residências, prédios e estabelecimentos comerciais, seguindo todas as normas técnicas de segurança.',
+    image: instalacaoImg,
+    icon: Hammer
   }
 ];
 
@@ -161,11 +179,12 @@ function HomePage() {
             title={<>Nossos <span className="text-flame">Serviços</span></>}
             description="Oferecemos soluções completas em sistemas de aquecimento a gás, com qualidade, segurança e garantia total."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <div key={service.title} className="service-card group overflow-hidden flex flex-col">
+                <div key={service.title} className="service-card group overflow-hidden flex flex-col w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
+                  <div className="relative">
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={service.image}
@@ -173,6 +192,7 @@ function HomePage() {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
+                  </div>
                     <div className="icon-badge absolute bottom-0 left-6 translate-y-1/2 w-14 h-14">
                       <Icon className="w-7 h-7" />
                     </div>
@@ -413,6 +433,9 @@ function App() {
                 <li><Link to="/servicos" className="hover:text-primary transition-colors">Instalação de Aquecedores a Gás</Link></li>
                 <li><Link to="/servicos" className="hover:text-primary transition-colors">Manutenção Preventiva</Link></li>
                 <li><Link to="/servicos" className="hover:text-primary transition-colors">Conserto de Aquecedores</Link></li>
+                <li><Link to="/servicos" className="hover:text-primary transition-colors">Instalação e Manutenção de Boilers</Link></li>
+                <li><Link to="/servicos" className="hover:text-primary transition-colors">Resina na Tubulação</Link></li>
+                <li><Link to="/servicos" className="hover:text-primary transition-colors">Construção de Tubulação</Link></li>
                 <li><Link to="/atendimento-24h" className="hover:text-primary transition-colors">Atendimento de Emergência</Link></li>
               </ul>
             </div>

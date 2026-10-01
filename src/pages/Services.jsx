@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrench, CheckCircle, Shield, Users } from 'lucide-react';
+import { Wrench, CheckCircle, Shield, Users, Thermometer, Droplets, Hammer } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 import { whatsappLink } from '../lib/contact';
 
@@ -36,8 +36,20 @@ function Services() {
     {
       title: 'Instalação e Manutenção de Boilers',
       description: 'Oferecemos serviços completos para boilers, incluindo instalação, manutenção e reparos. Seja para sistemas residenciais ou comerciais, nossa equipe assegura que seu boiler funcione com máxima eficiência e segurança, proporcionando água quente em abundância.',
-      image: consertoImg, // Usar uma imagem genérica ou buscar uma específica para boiler
-      icon: Wrench
+      image: consertoImg,
+      icon: Thermometer
+    },
+    {
+      title: 'Resina na Tubulação',
+      description: 'Aplicação de resina epóxi nas tubulações para restaurar, vedar e proteger canos antigos sem necessidade de quebra de paredes. Solução eficiente, econômica e duradoura para eliminar vazamentos e corrosão em instalações residenciais e comerciais.',
+      image: manutencaoImg,
+      icon: Droplets
+    },
+    {
+      title: 'Construção de Tubulação',
+      description: 'Construção e instalação de tubulações de gás para residências, condomínios e estabelecimentos comerciais. Executamos projetos completos de rede de gás com total conformidade às normas técnicas da ABNT, garantindo segurança e eficiência no fornecimento.',
+      image: instalacaoImg,
+      icon: Hammer
     }
   ];
 
@@ -50,18 +62,20 @@ function Services() {
             Nossos Serviços <span className="text-flame">Completos</span>
           </h1>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <div key={service.title} className="service-card group overflow-hidden flex flex-col">
-                <div className="relative h-52 overflow-hidden">
+              <div key={service.title} className="service-card group overflow-hidden flex flex-col w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+                <div className="relative">
+                  <div className="relative h-52 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
+                  </div>
                   <div className="icon-badge absolute bottom-0 left-6 translate-y-1/2 w-14 h-14">
                     <Icon className="w-7 h-7" />
                   </div>
