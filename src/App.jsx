@@ -5,8 +5,8 @@ import './App.css';
 
 // Importar imagens
 import logoRM from './assets/rm_aquecedores_logo.png';
-import manutencaoImg from './assets/manutencao_aquecedor.jpg';
-import consertoImg from './assets/conserto_aquecedor.jpg';
+import servicoConsertoImg from './assets/servico_conserto.webp';
+import servicoResinaImg from './assets/servico_resina.webp';
 import servicoInstalacaoImg from './assets/servico_instalacao.webp';
 import servicoManutencaoImg from './assets/servico_manutencao.webp';
 import servicoVendaImg from './assets/servico_venda.webp';
@@ -48,7 +48,7 @@ const services = [
   {
     title: 'Conserto de Aquecedores',
     description: 'Serviço especializado em conserto de aquecedores a gás, incluindo limpeza, regulagem e substituição de peças.',
-    image: consertoImg,
+    image: servicoConsertoImg,
     icon: Shield
   },
   {
@@ -66,7 +66,7 @@ const services = [
   {
     title: 'Resina na Tubulação',
     description: 'Aplicação de resina epóxi nas tubulações para restaurar, vedar e proteger canos antigos sem necessidade de quebra de paredes, com durabilidade e segurança.',
-    image: manutencaoImg,
+    image: servicoResinaImg,
     icon: Droplets
   },
   {

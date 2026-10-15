@@ -3,8 +3,8 @@ import { Wrench, CheckCircle, Shield, Users, Thermometer, Droplets, Hammer } fro
 import { ArrowRight } from 'lucide-react';
 import { whatsappLink } from '../lib/contact';
 
-import manutencaoImg from '../assets/manutencao_aquecedor.jpg';
-import consertoImg from '../assets/conserto_aquecedor.jpg';
+import servicoConsertoImg from '../assets/servico_conserto.webp';
+import servicoResinaImg from '../assets/servico_resina.webp';
 import servicoInstalacaoImg from '../assets/servico_instalacao.webp';
 import servicoManutencaoImg from '../assets/servico_manutencao.webp';
 import servicoVendaImg from '../assets/servico_venda.webp';
@@ -28,7 +28,7 @@ function Services() {
     {
       title: 'Conserto de Aquecedores',
       description: 'Seu aquecedor a gás apresentou algum problema? Nossa equipe de técnicos qualificados está pronta para diagnosticar e reparar qualquer tipo de falha, desde pequenos ajustes até a substituição de peças. Atendimento rápido e eficaz para restaurar o conforto da sua água quente.',
-      image: consertoImg,
+      image: servicoConsertoImg,
       icon: Shield
     },
     {
@@ -46,7 +46,7 @@ function Services() {
     {
       title: 'Resina na Tubulação',
       description: 'Aplicação de resina epóxi nas tubulações para restaurar, vedar e proteger canos antigos sem necessidade de quebra de paredes. Solução eficiente, econômica e duradoura para eliminar vazamentos e corrosão em instalações residenciais e comerciais.',
-      image: manutencaoImg,
+      image: servicoResinaImg,
       icon: Droplets
     },
     {
