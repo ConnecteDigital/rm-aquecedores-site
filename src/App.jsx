@@ -5,9 +5,13 @@ import './App.css';
 
 // Importar imagens
 import logoRM from './assets/rm_aquecedores_logo.png';
-import instalacaoImg from './assets/instalacao_aquecedor.jpg';
 import manutencaoImg from './assets/manutencao_aquecedor.jpg';
 import consertoImg from './assets/conserto_aquecedor.jpg';
+import servicoInstalacaoImg from './assets/servico_instalacao.webp';
+import servicoManutencaoImg from './assets/servico_manutencao.webp';
+import servicoVendaImg from './assets/servico_venda.webp';
+import servicoBoilerImg from './assets/servico_boiler.webp';
+import servicoTubulacaoImg from './assets/servico_tubulacao.webp';
 import heroBackground from './assets/new_hero_background.png';
 
 import ServicesPage from './pages/Services';
@@ -32,13 +36,13 @@ const services = [
   {
     title: 'Instalação de Aquecedores a Gás',
     description: 'Instalação profissional com projeto personalizado e adequação às normas técnicas vigentes.',
-    image: instalacaoImg,
+    image: servicoInstalacaoImg,
     icon: Wrench
   },
   {
     title: 'Manutenção Preventiva',
     description: 'Manutenção preventiva e corretiva para sistemas de aquecimento a gás, garantindo máxima eficiência energética.',
-    image: manutencaoImg,
+    image: servicoManutencaoImg,
     icon: CheckCircle
   },
   {
@@ -50,13 +54,13 @@ const services = [
   {
     title: 'Venda de Aquecedores',
     description: 'Comercialização de aquecedores a gás das melhores marcas do mercado, com garantia e suporte técnico completo.',
-    image: instalacaoImg,
+    image: servicoVendaImg,
     icon: Users
   },
   {
     title: 'Instalação e Manutenção de Boilers',
     description: 'Serviços completos para boilers residenciais e comerciais: instalação, manutenção e reparos com máxima eficiência e segurança.',
-    image: consertoImg,
+    image: servicoBoilerImg,
     icon: Thermometer
   },
   {
@@ -68,7 +72,7 @@ const services = [
   {
     title: 'Construção de Tubulação',
     description: 'Construção e instalação de tubulações de gás para residências, prédios e estabelecimentos comerciais, seguindo todas as normas técnicas de segurança.',
-    image: instalacaoImg,
+    image: servicoTubulacaoImg,
     icon: Hammer
   }
 ];

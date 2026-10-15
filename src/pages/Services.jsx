@@ -3,22 +3,26 @@ import { Wrench, CheckCircle, Shield, Users, Thermometer, Droplets, Hammer } fro
 import { ArrowRight } from 'lucide-react';
 import { whatsappLink } from '../lib/contact';
 
-import instalacaoImg from '../assets/instalacao_aquecedor.jpg';
 import manutencaoImg from '../assets/manutencao_aquecedor.jpg';
 import consertoImg from '../assets/conserto_aquecedor.jpg';
+import servicoInstalacaoImg from '../assets/servico_instalacao.webp';
+import servicoManutencaoImg from '../assets/servico_manutencao.webp';
+import servicoVendaImg from '../assets/servico_venda.webp';
+import servicoBoilerImg from '../assets/servico_boiler.webp';
+import servicoTubulacaoImg from '../assets/servico_tubulacao.webp';
 
 function Services() {
   const services = [
     {
       title: 'Instalação de Aquecedores a Gás',
       description: 'Nossa equipe especializada realiza a instalação de aquecedores a gás de forma segura e eficiente, seguindo todas as normas técnicas e garantindo o perfeito funcionamento do seu equipamento. Trabalhamos com as principais marcas do mercado, oferecendo soluções personalizadas para residências e empresas.',
-      image: instalacaoImg,
+      image: servicoInstalacaoImg,
       icon: Wrench
     },
     {
       title: 'Manutenção Preventiva',
       description: 'A manutenção preventiva é crucial para prolongar a vida útil do seu aquecedor a gás e garantir sua segurança. Realizamos inspeções completas, limpeza de componentes, verificação de vazamentos e ajustes necessários para otimizar o desempenho e evitar problemas futuros.',
-      image: manutencaoImg,
+      image: servicoManutencaoImg,
       icon: CheckCircle
     },
     {
@@ -30,13 +34,13 @@ function Services() {
     {
       title: 'Venda de Aquecedores',
       description: 'Comercializamos aquecedores a gás das melhores marcas do mercado, oferecendo produtos de alta qualidade com garantia e suporte técnico completo. Nossa equipe especializada ajuda você a escolher o modelo ideal para suas necessidades.',
-      image: instalacaoImg,
+      image: servicoVendaImg,
       icon: Users
     },
     {
       title: 'Instalação e Manutenção de Boilers',
       description: 'Oferecemos serviços completos para boilers, incluindo instalação, manutenção e reparos. Seja para sistemas residenciais ou comerciais, nossa equipe assegura que seu boiler funcione com máxima eficiência e segurança, proporcionando água quente em abundância.',
-      image: consertoImg,
+      image: servicoBoilerImg,
       icon: Thermometer
     },
     {
@@ -48,7 +52,7 @@ function Services() {
     {
       title: 'Construção de Tubulação',
       description: 'Construção e instalação de tubulações de gás para residências, condomínios e estabelecimentos comerciais. Executamos projetos completos de rede de gás com total conformidade às normas técnicas da ABNT, garantindo segurança e eficiência no fornecimento.',
-      image: instalacaoImg,
+      image: servicoTubulacaoImg,
       icon: Hammer
     }
   ];
