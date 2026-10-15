@@ -179,11 +179,30 @@ h1, h2, h3, h4, .font-display {
   pointer-events: none;
 }
 
-/* Hero */
+/* Hero: foto própria no celular, foto original a partir de 768px */
+.hero-bg {
+  background-image: var(--hero-mobile);
+  background-position: center 30%;
+}
+
+@media (min-width: 768px) {
+  .hero-bg {
+    background-image: var(--hero-desktop);
+    background-position: 70% center;
+  }
+}
+
 .hero-overlay {
   background:
     linear-gradient(90deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.8) 50%, rgba(10, 10, 10, 0.55) 100%),
     linear-gradient(0deg, #0a0a0a 0%, transparent 35%);
+}
+
+@media (max-width: 767px) {
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0.7) 45%, rgba(10, 10, 10, 0.92) 100%);
+  }
 }
 
 /* Etiqueta acima dos títulos */

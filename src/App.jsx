@@ -13,6 +13,7 @@ import servicoVendaImg from './assets/servico_venda.webp';
 import servicoBoilerImg from './assets/servico_boiler.webp';
 import servicoTubulacaoImg from './assets/servico_tubulacao.webp';
 import heroBackground from './assets/new_hero_background.png';
+import heroBackgroundMobile from './assets/hero_mobile.webp';
 
 import ServicesPage from './pages/Services';
 
@@ -146,8 +147,8 @@ function HomePage() {
     <>
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden bg-cover bg-[70%_center] min-h-[640px] md:min-h-[720px] flex items-center"
-        style={{ backgroundImage: `url(${heroBackground})` }}
+        className="hero-bg relative overflow-hidden bg-cover min-h-[640px] md:min-h-[720px] flex items-center"
+        style={{ '--hero-desktop': `url(${heroBackground})`, '--hero-mobile': `url(${heroBackgroundMobile})` }}
       >
         <div className="absolute inset-0 hero-overlay"></div>
         <div className="container mx-auto px-4 py-20 relative z-10">
